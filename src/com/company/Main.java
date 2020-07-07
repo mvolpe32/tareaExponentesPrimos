@@ -8,34 +8,34 @@ import java.text.SimpleDateFormat;
 
 public class Main {
 
-    static void fillMatriz(int[][] myArray){
+    static void fillMatriz(int[][] myArray, int rows, int col){
         int numero = 0;
-        for (int i = 0; i < 41; i++) {
+        for (int i = 0; i < rows; i++) {
             myArray[i][0] = numero;
             numero = numero + 1;
         }
         numero = 0;
-        for (int j = 0; j < 41; j++) {
+        for (int j = 0; j < col; j++) {
             myArray[0][j] = numero;
             numero++;
         }
     }
 
-    static void printMatriz(int[][] myArray) {
-        for (int i = 0; i < 41; i++) {
-            for (int j = 0; j < 41; j++) {
+    static void printMatriz(int[][] myArray, int rows, int col) {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < rows; j++) {
                 System.out.print(myArray[i][j] + " ");
             }
             System.out.print("\n");
         }
     }
 
-    static void cargarMatriz(int[][] myArray) {
+    static void cargarMatriz(int[][] myArray, int rows, int col) {
         int numero, contador = 0;
         int i, j;
-        for (i = 2; i < 41; i++) {
+        for (i = 2; i < rows; i++) {
             numero = i;
-            for (j = 2; j < 41; j++) {
+            for (j = 2; j < col; j++) {
                 while ((numero % j == 0) && (numero != 1)) {
                     contador++;
                     numero = numero / j;
@@ -48,10 +48,12 @@ public class Main {
 
 
     public static void main(String[] args) {
-        int[][] miMatriz = new int[41][41];
-        fillMatriz(miMatriz);
-        cargarMatriz(miMatriz);
-        printMatriz(miMatriz);
+        int rows= 101;
+        int col = 101;
+        int[][] miMatriz = new int[rows][col];
+        fillMatriz(miMatriz, rows, col);
+        cargarMatriz(miMatriz, rows, col);
+        printMatriz(miMatriz, rows, col);
     }
 
 }
