@@ -7,6 +7,11 @@ import java.text.SimpleDateFormat;
 
 public class Main {
 
+//    static void isPrime(int number){
+//        int m = number / 2;
+//
+//    }
+
     static void fillAxes(int[][] myArray){
         int numero = 0;
         for (int i = 0; i < myArray.length; i++) {
@@ -23,9 +28,9 @@ public class Main {
     static void printMatriz(int[][] myArray) {
         for (int i = 0; i < myArray.length; i++) {
             for (int j = 0; j < myArray[i].length; j++) {
-                System.out.print(myArray[i][j] + " ");
+                System.out.printf("% 3d ",myArray[i][j]);
             }
-            System.out.printf("\n");
+            System.out.print("\n");
         }
     }
 
